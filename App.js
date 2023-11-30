@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./src/Components/HomeScreen";
+import { View, Text, StyleSheet} from "react-native";
+import VegRecipes from "./src/Components/VegRecipes";
+import MeatPoultryRecipes from "./src/Components/MeatPoultryRecipes"
+import SurfTurfRecipes from "./src/Components/SurfTurfRecipes";
+import SeafoodRecipes from "./src/Components/SeafoodRecipes";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerTitle: "Breath of the Wild: Cookbook "}}>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="VegRecipes" component={VegRecipes} />
+        <Stack.Screen name="MeatPoultryRecipes" component={MeatPoultryRecipes} />
+        <Stack.Screen name="SurfTurfRecipes" component={SurfTurfRecipes} />
+        <Stack.Screen name="SeafoodRecipes" component={SeafoodRecipes} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  
 });
