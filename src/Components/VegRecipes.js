@@ -13,8 +13,7 @@ const VegRecipes = () => {
                 keyExtractor={( item ) => item.id}
                 renderItem={({ item }) => (
                     <View>
-                        <Text>{item.id}</Text>
-                        <Text>{item.name}</Text>
+                        <Text>{item.id}. {item.name}</Text>
                     </View>
                 )}
             />
