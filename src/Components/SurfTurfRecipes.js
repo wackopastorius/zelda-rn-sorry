@@ -18,13 +18,13 @@ const SurfTurfRecipes = () => {
             <View style={styles.itemContainer}>
                 <Text style={styles.textStyle}>{item.name}</Text>
                 <Image
-               source={{ uri: item.imageURL }} 
-               style={styles.imageStyle}
-           />
+                    source={{ uri: item.imageURL }}
+                    style={styles.imageStyle}
+                />
             </View>
         );
     };
-console.log(results);
+    console.log(results);
     return (
         <View style={styles.containerStyle}>
             <Text style={styles.titleStyle}>Surf & Turf Recipes</Text>
@@ -38,16 +38,16 @@ console.log(results);
 };
 
 const colors = {
-        background: '#E0D7C6', // Light beige
-        text: '#3D352F',       // Dark brown
-        accent: '#488BEC',     // Royal blue
-    };
+    background: '#E0D7C6', // Light beige
+    text: '#3D352F',       // Dark brown
+    accent: '#488BEC',     // Royal blue
+};
 
 const styles = StyleSheet.create({
     textStyle: {
         fontFamily: 'The Wild Breath of Zelda',
         fontSize: 35,
-    }, 
+    },
     containerStyle: {
         flex: 1,
         backgroundColor: colors.background,
@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     imageStyle: {
-    height: 200,
-    width: 300,
-  },
+        height: 200,
+        width: 300,
+    },
 
 });
 
