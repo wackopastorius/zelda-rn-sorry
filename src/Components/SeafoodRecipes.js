@@ -7,7 +7,7 @@ import { useFonts } from "expo-font";
 const SeafoodRecipes = () => {
     const [results, errorMessage] = useResults('seafoodrecipes');
     const [fontsLoaded] = useFonts({
-        'The Wild Breath of Zelda': require('../../assets/fonts/The Wild Breath of Zelda.otf')
+        'The Wild Breath of Zelda': require('../../assets/fonts/The_Wild_Breath_of_Zelda.otf')
     });
     if (!fontsLoaded) {
         return null;
