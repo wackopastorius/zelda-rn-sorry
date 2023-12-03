@@ -4,7 +4,6 @@ import useResults from "../hooks/useResults";
 
 const SeafoodRecipes = () => {
     const [results, errorMessage] = useResults('seafoodrecipes');
-    
     const renderItem = ({ item }) => {
         return (
             <View style={styles.itemContainer}>
