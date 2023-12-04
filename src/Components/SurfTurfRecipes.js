@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import cookbook from "../api/cookbook";
 import useResults from "../hooks/useResults";
 import { useFonts } from "expo-font";
+import LikeDislikeForm from "./LikeDislikeForm";
 
 const SurfTurfRecipes = () => {
     const [results, errorMessage] = useResults('surfturfrecipes');
@@ -18,9 +19,9 @@ const SurfTurfRecipes = () => {
             <View style={styles.itemContainer}>
                 <Text style={styles.textStyle}>{item.name}</Text>
                 <Image
-               source={{ uri: item.imageURL }} 
-               style={styles.imageStyle}
-           />
+                    source={{ uri: item.imageURL }} 
+                    style={styles.imageStyle}/>
+                <LikeDislikeForm />
             </View>
         );
     };

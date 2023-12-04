@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import useResults from "../hooks/useResults";
+import LikeDislikeForm from "./LikeDislikeForm";
 
 const VegRecipes = () => {
     const [results, errorMessage] = useResults('vegrecipes');
@@ -13,6 +14,7 @@ const VegRecipes = () => {
                     source={{ uri: item.imageURL }} 
                     style={styles.imageStyle}
                 />
+                <LikeDislikeForm />
             </View>
         );
     };
@@ -23,8 +25,10 @@ const VegRecipes = () => {
             <FlatList
                 data={results}
                 keyExtractor={(result) => result.id}
-                renderItem={renderItem}
-            />
+                renderItem={renderItem}>
+            </FlatList>
+            
+            
         </View>
     );
 };
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     imageStyle: {
     height: 200,
     width: 300,
-  },
+    },
 
 });
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import useResults from "../hooks/useResults";
+import LikeDislikeForm from "./LikeDislikeForm";
 
 const SeafoodRecipes = () => {
     const [results, errorMessage] = useResults('seafoodrecipes');
@@ -12,6 +13,7 @@ const SeafoodRecipes = () => {
                     source={{ uri: item.imageURL }} 
                     style={styles.imageStyle}
                 />
+                <LikeDislikeForm />
             </View>
         );
     };
