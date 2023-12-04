@@ -51,7 +51,7 @@ const SigninScreen = ({ navigation }) => {
         value={password}
         autoCapitalize="none"
         autoCorrect={false}
-        //secureTextEntry={true}
+        secureTextEntry={true}
         onChangeText={setPassword}
       />
       <Button style={styles.button} title="Sign in" onPress={() => signin()} />

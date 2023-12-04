@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
-import cookbook from '../api/cookbook';
 import useResults from '../hooks/useResults';
 import { useFonts } from 'expo-font';
+import LikeDislikeForm from './LikeDislikeForm';
 
 const MeatPoultryRecipes = () => {
   const [results, errorMessage] = useResults('meatrecipes');
@@ -18,10 +18,11 @@ const MeatPoultryRecipes = () => {
       <View style={styles.itemContainer}>
         <Text style={styles.textStyle}>{item.name}</Text>
         <Image source={{ uri: item.imageURL }} style={styles.imageStyle} />
+        <LikeDislikeForm />
       </View>
     );
   };
-  console.log(results);
+  
   return (
     <View style={styles.containerStyle}>
       <Text style={styles.titleStyle}>Meat & Poultry Recipes</Text>
